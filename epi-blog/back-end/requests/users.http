@@ -1,0 +1,42 @@
+
+@baseUrl =  http://localhost:3001
+
+# GET http://localhost:3001 
+
+# ###
+
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+    "Nome": "Massimiliano",
+    "Cognome": "Teramo",
+    "Age": 37
+}
+
+
+### 
+
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+    "firstName": "adw",
+    "lastName": "sads",
+    "email": "dasdadq",
+    "password": "dewwdwdwe"
+}
+
+###
+
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+    "email": "dasdadq",
+    "password": "dewwdwdwe"
+}
+
+###
+
+GET {{baseUrl}}/login-google

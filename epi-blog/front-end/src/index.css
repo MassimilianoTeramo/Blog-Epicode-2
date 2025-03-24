@@ -1,0 +1,409 @@
+body {
+  background-color: #0a0a0a;
+  position: relative;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent 0%, rgba(26, 29, 27, 0.8) 100%);
+  pointer-events: none;
+}
+
+
+@keyframes slideBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 100px;
+  }
+}
+
+
+/* NAVBAR */
+
+.custom-navbar {
+  background: #000000;
+  box-shadow: 0 2px 10px rgba(46, 255, 96, 0.2);
+  padding: 1rem 0;
+}
+
+.brand-text {
+  color: #2eff60 !important;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(46, 255, 96, 0.5);
+}
+
+.nav-link-custom {
+  color: rgba(255, 255, 255, 0.8) !important;
+  margin: 0 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link-custom::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #2eff60;
+  transition: width 0.3s ease;
+}
+
+.nav-link-custom:hover {
+  color: #2eff60 !important;
+  text-shadow: 0 0 5px rgba(46, 255, 96, 0.3);
+}
+
+.nav-link-custom:hover::after {
+  width: 100%;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 2px solid #2eff60;
+  color: #2eff60;
+  padding: 0.5rem 1.5rem;
+  margin-left: 1rem;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #2eff60;
+  color: #000000;
+  box-shadow: 0 0 15px rgba(46, 255, 96, 0.5);
+  border-color: #2eff60;
+}
+
+.navbar-toggler {
+  border-color: #2eff60;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(46, 255, 96, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 991px) {
+  .nav-link-custom {
+    padding: 0.5rem 0;
+  }
+  
+  .logout-btn {
+    margin: 1rem 0;
+    width: 100%;
+  }
+}
+
+/* Fine NAVBAR */
+
+/* CARDS */
+
+.movie-poster-card {
+  transition: transform 0.3s ease;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+  color: #fff;
+}
+
+.movie-poster-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.poster-image-container {
+  position: relative;
+  padding-top: 60%; /* Aspect ratio 2:3 come i poster cinematografici */
+}
+
+.poster-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.poster-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.poster-body {
+  background: linear-gradient(0deg, #000000, transparent);
+  padding: 2rem 1.5rem;
+}
+
+.movie-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.movie-description {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.movie-metadata {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text-muted {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Fine CARDS */
+
+/* FORMS */
+.form-container {
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(46, 255, 96, 0.2);
+  margin-top: 2rem;
+}
+
+.form-title {
+  color: #2eff60;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(46, 255, 96, 0.3);
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(46, 255, 96, 0.2) !important;
+  color: white !important;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: #2eff60 !important;
+  box-shadow: 0 0 10px rgba(46, 255, 96, 0.3) !important;
+}
+
+.form-label {
+  color: #2eff60;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.submit-button {
+  background: transparent;
+  border: 2px solid #2eff60;
+  color: #2eff60;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.submit-button:hover {
+  background: #2eff60;
+  color: #000000;
+  box-shadow: 0 0 15px rgba(46, 255, 96, 0.5);
+}
+
+.alert {
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  color: #ff4444;
+}
+
+/* Stile specifico per il form di creazione post */
+
+.image-preview {
+  border: 2px dashed rgba(46, 255, 96, 0.3);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  text-align: center;
+  color: #2eff60;
+}
+
+/* Fine FORMS */
+
+/* PAGINATION BTN */
+
+.pagination {
+  margin-top: 2rem;
+  gap: 0.5rem;
+}
+
+/* Stile per tutti i bottoni della paginazione */
+.page-item .page-link {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(46, 255, 96, 0.3);
+  color: rgba(46, 255, 96, 0.8);
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Hover sui bottoni */
+.page-item .page-link:hover {
+  background-color: rgba(46, 255, 96, 0.1);
+  border-color: #2eff60;
+  color: #2eff60;
+  box-shadow: 0 0 10px rgba(46, 255, 96, 0.2);
+}
+
+/* Bottone pagina attiva */
+.page-item.active .page-link {
+  background-color: #2eff60;
+  border-color: #2eff60;
+  color: #000000;
+  box-shadow: 0 0 15px rgba(46, 255, 96, 0.3);
+}
+
+/* Bottoni disabilitati */
+.page-item.disabled .page-link {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-color: rgba(46, 255, 96, 0.1);
+  color: rgba(46, 255, 96, 0.3);
+}
+
+/* Focus sui bottoni */
+.page-link:focus {
+  box-shadow: 0 0 0 0.2rem rgba(46, 255, 96, 0.25);
+  background-color: rgba(46, 255, 96, 0.1);
+}
+
+/* Rimuovi l'outline predefinito di Bootstrap */
+.page-link:focus {
+  outline: none;
+}
+
+/* FOOTER */
+.custom-footer {
+  background: #000000;
+  color: white;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  box-shadow: 0 -2px 10px rgba(46, 255, 96, 0.2);
+}
+
+.footer-title {
+  color: #2eff60;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px rgba(46, 255, 96, 0.3);
+}
+
+.footer-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #2eff60;
+  transition: width 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #2eff60;
+  text-shadow: 0 0 5px rgba(46, 255, 96, 0.3);
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-link {
+  color: #2eff60;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  color: white;
+  text-shadow: 0 0 10px rgba(46, 255, 96, 0.5);
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(46, 255, 96, 0.2);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+.footer-section {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .footer-section {
+    text-align: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+}
