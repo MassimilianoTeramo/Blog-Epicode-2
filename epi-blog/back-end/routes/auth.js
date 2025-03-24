@@ -4,6 +4,7 @@ import User from '../modelli/Users.js'
 import jwt from 'jsonwebtoken'
 import passport from "../config/passport.js";
 import express from 'express';
+import mailer from '../helpers/mailer.js';
 import { authorization } from "../middlewares/authorization.js";
 
 const router = Router();
@@ -62,18 +63,19 @@ router.post('/register', async (request, response) => {
         const token = generateToken(newUser);
         response.status(201).json({user:userToSend, token});
 
-        await mailer.sendMail({
-            from: 'Massimiliano',
-            to: request.body.email,
-            subject: 'Welcome to our blog',
-            text: `Welcome ${request.body.firstName} ${request.body.lastName}`,
-            html: `<b>Thanks ${request.body.firstName} ${request.body.lastName} for registering to my blog! </b>`
-        });
+       
 
        
     } catch (err) {
         response.status(500).json({ error: err.message });
     }
+     await mailer.sendMail({
+            from: "maxtera87@gmail.com",
+            to: request.body.email,
+            subject: 'Welcome to our blog',
+            text: `Welcome ${request.body.firstName} ${request.body.lastName}`,
+            html: `<b>Thanks ${request.body.firstName} ${request.body.lastName} for registering to my blog! </b>`
+        });
 });
 
 //GOOGLE
