@@ -104,90 +104,90 @@ fetchEdit();
         Edit Post
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Edit your post</Modal.Title>
+      <Modal show={show} onHide={handleClose} className="modal-dark">
+        <Modal.Header closeButton className="border-0">
+          <Modal.Title className="form-title">Modifica il tuo post</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-        <Form onSubmit={handleEdit}>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Title</Form.Label>
-                            <Form.Control
-                                type="text"
-                                value={formData.title}
-                                onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                                required    
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Category</Form.Label>
-                            <Form.Control
-                                type="text"
-                                value={formData.category}
-                                onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                                required
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                <Form.Label>Image</Form.Label>
-                <Form.Control
-                    type="file"
-                    accept="image/*"
-                    onChange={handleImageChange}
-                    required
-                />
-                {previewUrl && (
-                    <img 
-                        src={previewUrl} 
-                        alt="Preview" 
-                        className="mt-2" 
-                        style={{maxWidth: '200px'}} 
-                    />
-                )}
+        <Modal.Body className="form-container">
+          <Form onSubmit={handleEdit}>
+            <Form.Group className="mb-3">
+              <Form.Label className="form-label">Titolo</Form.Label>
+              <Form.Control
+                type="text"
+                value={formData.title}
+                onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                required    
+              />
             </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Content</Form.Label>
-                            <Form.Control
-                                as="textarea"
-                                rows={5}
-                                value={formData.content}
-                                onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                                required
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Reading Time</Form.Label>
-                            <Row>
-                                <Col xs={8}>
-                                    <Form.Control
-                                        type="number"
-                                        value={formData.readTime.value}
-                                        onChange={(e) => setFormData({ ...formData, readTime: { ...formData.readTime, value: e.target.value } })}
-                                        required
-                                    />
-                                </Col>
-                                <Col xs={4}>
-                                    
-                                    <Form.Control
-                                        as="select"
-                                        value={formData.readTime.unit}
-                                        onChange={(e) => setFormData({ ...formData, readTime: { ...formData.readTime, unit: e.target.value } })}
-                                        required
-                                    >
-                                        <option value="minuti">Minuti</option>
-                                        <option value="ore">Ore</option>
-                                    </Form.Control>
-                                </Col>
-                            </Row>
-                        </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Submit changes
-                        </Button>
-                        <Button variant="secondary" onClick={handleClose}>
-                            Close
-                        </Button>
-                    </Form>
-
+            <Form.Group className="mb-3">
+              <Form.Label className="form-label">Categoria</Form.Label>
+              <Form.Control
+                type="text"
+                value={formData.category}
+                onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                required
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label className="form-label">Immagine</Form.Label>
+              <Form.Control
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+                required
+              />
+              {previewUrl && (
+                <img 
+                  src={previewUrl} 
+                  alt="Preview" 
+                  className="mt-2" 
+                  style={{maxWidth: '200px'}} 
+                />
+              )}
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label className="form-label">Contenuto</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={5}
+                value={formData.content}
+                onChange={(e) => setFormData({ ...formData, content: e.target.value })}
+                required
+              />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <Form.Label className="form-label">Tempo di lettura</Form.Label>
+              <Row>
+                <Col xs={8}>
+                  <Form.Control
+                    type="number"
+                    value={formData.readTime.value}
+                    onChange={(e) => setFormData({ ...formData, readTime: { ...formData.readTime, value: e.target.value } })}
+                    required
+                  />
+                </Col>
+                <Col xs={4}>
+                  <Form.Control
+                    as="select"
+                    value={formData.readTime.unit}
+                    onChange={(e) => setFormData({ ...formData, readTime: { ...formData.readTime, unit: e.target.value } })}
+                    required
+                  >
+                    <option value="minuti">Minuti</option>
+                    <option value="ore">Ore</option>
+                  </Form.Control>
+                </Col>
+              </Row>
+            </Form.Group>
+            <div className="d-flex gap-3">
+              <Button className="submit-button" type="submit">
+                Salva modifiche
+              </Button>
+              <Button className="submit-button" onClick={handleClose} style={{ background: 'transparent', border: '2px solid #2eff60' }}>
+                Chiudi
+              </Button>
+            </div>
+          </Form>
         </Modal.Body>
       </Modal>
     </>

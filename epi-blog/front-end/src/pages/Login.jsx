@@ -5,7 +5,6 @@ import { useAuth } from '../contexts/AuthContext';
 import api from '../utils/api';
 import { FaGoogle } from 'react-icons/fa';
 
-
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -13,26 +12,25 @@ const Login = () => {
     const {login} = useAuth();
     const navigate = useNavigate();
 
-
-const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-        console.log('Tentativo di login con:', { email });
-        const response = await api.post('/auth/login/local', { email, password });
-        console.log('Risposta dal server:', response.data);
-        
-        const { user, token } = response.data;
-        await login(user, token);
-        navigate('/');
-    } catch (err) {
-        console.error('Errore dettagliato:', {
-            status: err.response?.status,
-            data: err.response?.data,
-            message: err.message
-        });
-        setError(err.response?.data?.message || 'Errore durante il login');
-    }
-};
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            console.log('Tentativo di login con:', { email });
+            const response = await api.post('/auth/login/local', { email, password });
+            console.log('Risposta dal server:', response.data);
+            
+            const { user, token } = response.data;
+            await login(user, token);
+            navigate('/');
+        } catch (err) {
+            console.error('Errore dettagliato:', {
+                status: err.response?.status,
+                data: err.response?.data,
+                message: err.message
+            });
+            setError(err.response?.data?.message || 'Errore durante il login');
+        }
+    };
 
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
@@ -61,22 +59,20 @@ const handleSubmit = async (e) => {
     return (
         <Container className='mt-5'>
             <Row className="justify-content-center">
-                <Col md={6} xs={12} className='cardLogIn form-container p-4'>
-                    <h2 className="text-center mt-4 form-label" style={{fontSize: '20px'}}>Login</h2>
+                <Col md={6} xs={12}>
+                    <h2 className="form-title">Login</h2>
                     {error && <Alert variant="danger">{error}</Alert>}
-                    <Form onSubmit={handleSubmit}>
+                    <Form onSubmit={handleSubmit} className="form-container">
                         <Form.Group className="mb-4" controlId='email'>  
                             <Form.Label className='form-label'>Email</Form.Label>
                             <Form.Control 
-                                className='form-control'
                                 type="email" 
                                 value={email} 
-                                placeholder='Insert your email' 
+                                placeholder='Inserisci la tua email' 
                                 onChange={(e) => {
                                     setEmail(e.target.value);
                                     setError('');
                                 }} 
-                                style={{ background: 'rgba(255, 255, 255, 0.5)' }}
                             />
                         </Form.Group>
                         <Form.Group className="mb-5" controlId='password'>
@@ -84,9 +80,8 @@ const handleSubmit = async (e) => {
                             <Form.Control 
                                 type="password"
                                 value={password} 
-                                placeholder='password' 
+                                placeholder='Inserisci la tua password' 
                                 onChange={(e) => setPassword(e.target.value)} 
-                                style={{ background: 'rgba(255, 255, 255, 0.5)' }}
                             />
                         </Form.Group>
                         <div className='d-flex flex-column gap-3 mt-4'>
@@ -106,16 +101,15 @@ const handleSubmit = async (e) => {
                             
                             <Button 
                                 onClick={handleGoogleLogin} 
-                                style={{  
+                                className="submit-button"
+                                style={{ 
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
                                     gap: '10px',
-                                    padding: '8px 16px'
                                 }}
-                                className='mb-4 submit-button'
                             >
-                                <FaGoogle className='icon-google' />
+                                <FaGoogle />
                                 Accedi con Google
                             </Button>
                         </div>
