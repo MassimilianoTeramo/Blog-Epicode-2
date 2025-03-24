@@ -3,6 +3,7 @@ import {Form, Button, Alert, Col, Row, Container} from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import api from '../utils/api';
+import { FaGoogle } from 'react-icons/fa';
 
 
 const Login = () => {
@@ -105,16 +106,17 @@ const handleSubmit = async (e) => {
                             
                             <Button 
                                 onClick={handleGoogleLogin} 
-                                style={{ 
-                                    background: 'rgba(211, 211, 211, 0.5)', 
-                                    border: 'none', 
-                                    borderRadius: '10px', 
-                                    boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)', 
-                                    width: '100%' 
+                                style={{  
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    gap: '10px',
+                                    padding: '8px 16px'
                                 }}
-                                className='mb-4'
+                                className='mb-4 submit-button'
                             >
-                                Login with Google 
+                                <FaGoogle className='icon-google' />
+                                Accedi con Google
                             </Button>
                         </div>
                     </Form>

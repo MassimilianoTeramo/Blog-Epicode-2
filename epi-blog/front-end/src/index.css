@@ -126,7 +126,7 @@ body::after {
 
 .poster-image-container {
   position: relative;
-  padding-top: 60%; /* Aspect ratio 2:3 come i poster cinematografici */
+  padding-top: 60%; 
 }
 
 .poster-image {
