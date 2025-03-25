@@ -45,8 +45,11 @@ server.use(passport.session());
 
 
 //mongo
-mongoose.connect(process.env.MONGO_URL, {}
-);
+mongoose.connect(process.env.MONGO_URL, {
+    useNewUrlParser: true, 
+    useUnifiedTopology: true, 
+    tls: true 
+  });
 
 mongoose.connection.on("connected", () => {
     console.log("Connesso a mongoDB");
