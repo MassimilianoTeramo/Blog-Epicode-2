@@ -85,7 +85,7 @@ router.get('/google',passport.authenticate('google', {scope: ['profile', 'email'
 router.get('/google/callback', passport.authenticate('google', {failureRedirect: '/login' }),
     (request, response)=> {
        const token = generateToken(request.user);
-        response.redirect(process.env.REACT_APP_API_BASE_URL+`login?token=${token}`) // pagina del frontend che salverá il JWT nel localStorage
+        response.redirect(process.env.BACKEND_HOST + `login?token=${token}`) // pagina del frontend che salverá il JWT nel localStorage
     }
 );
 
