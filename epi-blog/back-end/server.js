@@ -22,7 +22,7 @@ const server = express();
 //middleware
 server.use(cors(
     {
-        origin: process.env.FRONTEND_URL,
+        origin: process.env.FRONTEND_HOST,
         credentials: true
     }
 ));
