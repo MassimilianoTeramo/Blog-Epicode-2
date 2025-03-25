@@ -36,7 +36,7 @@ const EditPost = () => {
         
         setLoading(true)
          try    {
-            const response = await axios.get(`http://localhost:3001/posts/${id}`);
+            const response = await axios.get(process.env.REACT_APP_API_BASE_URL+`/posts/${id}`);
             const post = response.data
 
             setFormData({
@@ -81,7 +81,7 @@ fetchEdit();
             }
 
             await axios.put(
-                `http://localhost:3001/posts/${id}`, 
+                process.env.REACT_APP_API_BASE_URL+`/posts/${id}`, 
                 editedFormToSend,
                 {
                     headers: {

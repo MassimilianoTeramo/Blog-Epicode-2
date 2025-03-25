@@ -53,7 +53,7 @@ const Login = () => {
     }, [login, navigate]);
 
     const handleGoogleLogin = () => {
-        window.location.href = 'http://localhost:3001/auth/google';
+        window.location.href = process.env.REACT_APP_API_BASE_URL+'/auth/google';
     }
 
     return (

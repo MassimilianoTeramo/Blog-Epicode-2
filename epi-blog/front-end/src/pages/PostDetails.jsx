@@ -23,7 +23,7 @@ const PostDetails = () => {
         const fetchPost = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get(`http://localhost:3001/posts/${id}`);
+                const response = await axios.get(process.env.REACT_APP_API_BASE_URL+`/posts/${id}`);
                 if (response.status === 200) {
                     setPost(response.data);
                     setError(null);
@@ -45,7 +45,7 @@ const PostDetails = () => {
 
     const deletePost = async () => {
         try {
-          const response = await axios.delete(`http://localhost:3001/posts/${id}`);
+          const response = await axios.delete(process.env.REACT_APP_API_BASE_URL+`/posts/${id}`);
           console.log(`Post with ID ${id} deleted successfully`);
           navigate('/')
 

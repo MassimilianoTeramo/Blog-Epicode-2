@@ -28,7 +28,7 @@ const Register = () => {
             }
             
         try {
-            const response = await api.post('http://localhost:3001/auth/register', {
+            const response = await api.post(process.env.REACT_APP_API_BASE_URL+'/auth/register', {
                 firstName: formData.firstName,
                 lastName: formData.lastName,
                 email: formData.email,

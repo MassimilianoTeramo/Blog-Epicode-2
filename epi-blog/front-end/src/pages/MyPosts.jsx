@@ -15,7 +15,7 @@ const MyPosts= () =>{
         
         try{
             setLoading(true)
-            const response = await axios.get(`http://localhost:3001/posts?author=${user._id}`);
+            const response = await axios.get(process.env.REACT_APP_API_BASE_URL+`/posts?author=${user._id}`);
             setPosts(response.data.posts);
 
         } catch(err){
@@ -35,7 +35,7 @@ const MyPosts= () =>{
 
     const deleteMyPost = async (postId)=> {
         try {
-            await axios.delete(`http://localhost:3001/posts/${postId}`); //postId preso dal componente PostCards che passa {post} come prop
+            await axios.delete(process.env.REACT_APP_API_BASE_URL+`/posts/${postId}`); //postId preso dal componente PostCards che passa {post} come prop
             getMyPosts(); // per ricaricare i post dopo l'eliminazione
         } catch (err){
             setError('Something went wrong deleting your post')
