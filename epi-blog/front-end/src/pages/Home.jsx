@@ -24,7 +24,7 @@ const Home = () => {
     const fetchPosts = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(process.env.REACT_APP_API_BASE_URL+`/posts?page=${currentPage}`);
+        const response = await axios.get(process.env.REACT_APP_API_BASE_URL + `/posts?page=${currentPage}`);
         setPosts(response.data.posts);
         setTotalPages(response.data.totalPages);
         setError(null);
