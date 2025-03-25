@@ -16,7 +16,7 @@ const Comments = ({ postId }) => {
         }
 
         try {
-            const response = await axios.get(`http://localhost:3001/comments/post/${postId}`);
+            const response = await axios.get(process.env.REACT_APP_API_BASE_URL + `/comments/post/${postId}`);
             setComments(response.data);
         } catch (err) {
             setError('Errore nel caricamento dei commenti');
@@ -43,7 +43,7 @@ const Comments = ({ postId }) => {
 
         try {
            
-            const response = await axios.post('http://localhost:3001/comments', {
+            const response = await axios.post(process.env.REACT_APP_API_BASE_URL +'/comments', {
                 content: newComment,
                 author: user._id,
                 post: postId
@@ -65,7 +65,7 @@ const Comments = ({ postId }) => {
     
         try {
 
-            const response = await axios.delete(`http://localhost:3001/comments/${commentId}`);
+            const response = await axios.delete(process.env.REACT_APP_API_BASE_URL + `/comments/${commentId}`);
             
             if (response.status === 200) {
                 setComments(comments.filter(c => c._id !== commentId));
