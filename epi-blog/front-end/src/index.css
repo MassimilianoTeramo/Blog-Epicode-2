@@ -127,11 +127,11 @@ body::after {
   object-fit: cover;
 }
 
-/* .poster-overlay {
+.poster-overlay {
   position: absolute;
   top: 10px;
   right: 10px;
-} */
+}
 
 .poster-body {
   background: linear-gradient(0deg, #000000, transparent);
