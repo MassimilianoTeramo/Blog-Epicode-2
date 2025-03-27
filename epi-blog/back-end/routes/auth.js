@@ -75,7 +75,7 @@ router.post('/register', async (request, response) => {
           subject: 'Welcome to my blog',
           text: `Welcome ${request.body.firstName} ${request.body.lastName}`,
           html: `
-            <img src="https://collection.cloudinary.com/dvcckggpu/29c523fcb3697c729c84e4d446fa2f2e" alt="Welcome Image"></img>
+            <img src="https://res.cloudinary.com/dvcckggpu/image/upload/v1743099894/mrthankyou_x5cnuj.jpg" alt="Welcome Image"></img>
             <br>
             <h2>Hi ${request.body.firstName}!</h2>
             <b> Thanks for registering to my blog! </b>
