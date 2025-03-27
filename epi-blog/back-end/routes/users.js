@@ -20,18 +20,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-// //POST  registrazione
-// router.post('/register', async (req, res) => {
-//     try {
-//         const newUser = new User({...req.body, password: await bcrypt.hash(req.body.password, 10)});
-//         await newUser.save();
-//         res.status(201).json(newUser);
-//     } catch (err) {
-//         res.status(500).json({ message: err.message });
-//     }
-// }
-// );
-
 // post immagini
 
 router.post('/', 

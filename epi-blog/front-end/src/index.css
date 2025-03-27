@@ -14,7 +14,7 @@ body::after {
   pointer-events: none;
 }
 
-
+/* 
 @keyframes slideBackground {
   from {
     background-position: 0 0;
@@ -22,7 +22,7 @@ body::after {
   to {
     background-position: 0 100px;
   }
-}
+} */
 
 
 /* NAVBAR */
