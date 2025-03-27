@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import {useAuth} from '../contexts/AuthContext';
 
 const Footer = () => {
-    const {user, logout} = useAuth();
+  const {user, logout} = useAuth();
+
   return (
     <footer className="custom-footer">
       <Container>
@@ -19,15 +20,14 @@ const Footer = () => {
             <h5 className="footer-title">Link Utili</h5>
             <ul className="footer-links">
               <li><Link to="/">Home</Link></li>
-              {user && user.email ? (
+             {user && ( 
                 <>
                   <li><Link to="/posts/create">Nuovo Post</Link></li>
                   <li><Link to="/myposts">I Miei Post</Link></li>
                 </>
-              ) : (
-                <li><Link to="/login">Login</Link></li>
+
               )}
-            </ul>
+              </ul>
           </Col>
           <Col md={4} className="footer-section">
             <h5 className="footer-title">Contatti</h5>
