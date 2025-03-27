@@ -17,8 +17,12 @@ const Footer = () => {
             <h5 className="footer-title">Link Utili</h5>
             <ul className="footer-links">
               <li><Link to="/">Home</Link></li>
-              <li><Link to="/posts/create">Nuovo Post</Link></li>
-              <li><Link to="/myposts">I Miei Post</Link></li>
+              {user && (
+                <>
+                  <li><Link to="/posts/create">Nuovo Post</Link></li>
+                  <li><Link to="/myposts">I Miei Post</Link></li>
+                </>
+              )}
             </ul>
           </Col>
           <Col md={4} className="footer-section">
