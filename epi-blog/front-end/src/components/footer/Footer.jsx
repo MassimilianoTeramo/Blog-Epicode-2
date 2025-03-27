@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import {useAuth} from '../contexts/AuthContext';
+import {useAuth} from '../../contexts/AuthContext';
 
 const Footer = () => {
   const {user, logout} = useAuth();
@@ -20,6 +20,7 @@ const Footer = () => {
             <h5 className="footer-title">Link Utili</h5>
             <ul className="footer-links">
               <li><Link to="/">Home</Link></li>
+
              {user && ( 
                 <>
                   <li><Link to="/posts/create">Nuovo Post</Link></li>
