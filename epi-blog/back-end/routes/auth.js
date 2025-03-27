@@ -69,13 +69,20 @@ router.post('/register', async (request, response) => {
     } catch (err) {
         response.status(500).json({ error: err.message });
     }
-     await mailer.sendMail({
-            from: "maxtera87@gmail.com",
-            to: request.body.email,
-            subject: 'Welcome to our blog',
-            text: `Welcome ${request.body.firstName} ${request.body.lastName}`,
-            html: `<b>Thanks ${request.body.firstName} ${request.body.lastName} for registering to my blog! </b>`
-        });
+    await mailer.sendMail({
+          from: "maxtera87@gmail.com",
+          to: request.body.email,
+          subject: 'Welcome to our blog',
+          text: `Welcome ${request.body.firstName} ${request.body.lastName}`,
+          html: `<b>Thanks ${request.body.firstName} ${request.body.lastName} for registering to my blog! </b>`,
+          attachments: [
+             {
+                filename: 'mrthankyou.jpg', // Name of the file
+                path: '/Users/massimiliano/Desktop/mrthankyou.jpg', // Absolute or relative path to the image
+                cid: 'ThanksRegistering' // Content ID for inline embedding
+             }
+          ]
+       });
 });
 
 //GOOGLE
