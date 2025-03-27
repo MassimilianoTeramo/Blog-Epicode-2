@@ -20,12 +20,8 @@ const server = express();
 
 
 //middleware
-server.use(cors(
-    {
-        origin: process.env.FRONTEND_HOST,
-        credentials: true
-    }
-));
+server.use(cors());
+
 server.use(express.json());
 
 server.use(session({
