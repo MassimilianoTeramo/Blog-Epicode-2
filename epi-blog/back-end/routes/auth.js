@@ -72,16 +72,17 @@ router.post('/register', async (request, response) => {
     await mailer.sendMail({
           from: "maxtera87@gmail.com",
           to: request.body.email,
-          subject: 'Welcome to our blog',
+          subject: 'Welcome to my blog',
           text: `Welcome ${request.body.firstName} ${request.body.lastName}`,
-          html: `<b>Thanks ${request.body.firstName} ${request.body.lastName} for registering to my blog! </b>`,
-          attachments: [
-             {
-                filename: 'mrthankyou.jpg',
-                path: './uploads/mrthankyou.jpg',
-                cid: 'ThanksRegistering'
-             }
-          ]
+          html: `
+            <img src="https://collection.cloudinary.com/dvcckggpu/29c523fcb3697c729c84e4d446fa2f2e" alt="Welcome Image"></img>
+            <br>
+            <h2>Hi ${request.body.firstName}!</h2>
+            <b> Thanks for registering to my blog! </b>
+            <br>
+            <h3> Enjoy! </h3>
+            `,
+          
        });
 });
 
