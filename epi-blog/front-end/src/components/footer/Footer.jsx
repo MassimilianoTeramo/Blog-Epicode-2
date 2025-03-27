@@ -19,7 +19,7 @@ const Footer = () => {
             <h5 className="footer-title">Link Utili</h5>
             <ul className="footer-links">
               <li><Link to="/">Home</Link></li>
-              {user ? (
+              {user && user.email ? (
                 <>
                   <li><Link to="/posts/create">Nuovo Post</Link></li>
                   <li><Link to="/myposts">I Miei Post</Link></li>
