@@ -77,9 +77,9 @@ router.post('/register', async (request, response) => {
           html: `<b>Thanks ${request.body.firstName} ${request.body.lastName} for registering to my blog! </b>`,
           attachments: [
              {
-                filename: 'mrthankyou.jpg', // Name of the file
-                path: '/Users/massimiliano/Desktop/mrthankyou.jpg', // Absolute or relative path to the image
-                cid: 'ThanksRegistering' // Content ID for inline embedding
+                filename: 'mrthankyou.jpg',
+                path: './uploads/mrthankyou.jpg',
+                cid: 'ThanksRegistering'
              }
           ]
        });
