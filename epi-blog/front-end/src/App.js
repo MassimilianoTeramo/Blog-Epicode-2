@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import { Container } from "react-bootstrap";
 import Home from "./pages/Home";
-import  CreatePost  from "./pages/CreatePost";
+import CreatePost  from "./pages/CreatePost";
 import PostDetails from "./pages/PostDetails";
 import MyPosts from './pages/MyPosts';
 import Profile from './pages/Profile';
