@@ -1,7 +1,6 @@
-import React from "react";
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import {useAuth} from '../../contexts/AuthContext';
+import {useAuth} from '../contexts/AuthContext';
 
 const Footer = () => {
   const {user, logout} = useAuth();

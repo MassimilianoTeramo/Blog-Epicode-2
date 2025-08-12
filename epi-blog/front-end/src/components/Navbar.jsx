@@ -2,7 +2,6 @@ import {Navbar, Nav, Container, Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import {useAuth} from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import Image from 'react-bootstrap/Image';
 import { useEffect } from 'react';
 
 
