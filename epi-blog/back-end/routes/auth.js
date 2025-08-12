@@ -7,6 +7,7 @@ import express from 'express';
 import mailer from '../helpers/mailer.js';
 import { authorization } from "../middlewares/authorization.js";
 
+
 const router = Router();
 
 //GENERATE TOKEN
