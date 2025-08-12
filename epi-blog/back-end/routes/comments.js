@@ -1,6 +1,5 @@
 import express from "express";
 import Comment from "../modelli/Comment.js";
-import { authorization } from "../middlewares/authorization.js";
 import mongoose from 'mongoose';
 
 const router = express.Router();

@@ -5,7 +5,6 @@ import jwt from 'jsonwebtoken'
 import passport from "../config/passport.js";
 import express from 'express';
 import mailer from '../helpers/mailer.js';
-import { authorization } from "../middlewares/authorization.js";
 
 
 const router = Router();

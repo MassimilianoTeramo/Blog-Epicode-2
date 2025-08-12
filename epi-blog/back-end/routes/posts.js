@@ -2,7 +2,7 @@ import { Router } from "express";
 import Post from "../modelli/Post.js";
 import { upload } from '../utilities/cloudinary.js';
 import express from "express";
-import { authorization } from "../middlewares/authorization.js";
+
 
 
 
@@ -118,7 +118,7 @@ router.put('/:id', upload.single('cover'), async (req, res) => {
 });
 
 //DELETE
-router.delete('/:id', authorization, async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const post = await Post.findByIdAndDelete(req.params.id);
         res.json(post);
