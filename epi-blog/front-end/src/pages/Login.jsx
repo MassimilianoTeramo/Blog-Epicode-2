@@ -110,7 +110,7 @@ const Login = () => {
                                 }}
                             >
                                 <FaGoogle />
-                                Accedi con Google
+                                Log in with Google
                             </Button>
                         </div>
                     </Form>

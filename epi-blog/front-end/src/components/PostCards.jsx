@@ -36,7 +36,7 @@ const PostCards = ({ post }) => {
         </Button>
         <div className="movie-metadata">
           <small className="text-muted">
-            Di {post.author?.firstName || "Anonimo"}
+            By {post.author?.firstName || "Unknown"}
           </small>
           <small className="text-muted">
             {new Date(post.createdAt).toLocaleDateString()}

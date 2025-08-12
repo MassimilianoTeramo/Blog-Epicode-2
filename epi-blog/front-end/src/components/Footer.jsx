@@ -16,21 +16,21 @@ const Footer = () => {
             </p>
           </Col>
           <Col md={4} className="footer-section">
-            <h5 className="footer-title">Link Utili</h5>
+            <h5 className="footer-title">Useful links</h5>
             <ul className="footer-links">
               <li><Link to="/">Home</Link></li>
 
              {user && ( 
                 <>
-                  <li><Link to="/posts/create">Nuovo Post</Link></li>
-                  <li><Link to="/myposts">I Miei Post</Link></li>
+                  <li><Link to="/posts/create">Create new post</Link></li>
+                  <li><Link to="/myposts">My posts</Link></li>
                 </>
 
               )}
               </ul>
           </Col>
           <Col md={4} className="footer-section">
-            <h5 className="footer-title">Contatti</h5>
+            <h5 className="footer-title">Contacts</h5>
             <p className="footer-text">
               <i className="fas fa-envelope me-2"></i> maxtera87@gmail.com
             </p>

@@ -146,7 +146,7 @@ fetchEdit();
               )}
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label className="form-label">Contenuto</Form.Label>
+              <Form.Label className="form-label">Content</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={5}
@@ -156,7 +156,7 @@ fetchEdit();
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label className="form-label">Tempo di lettura</Form.Label>
+              <Form.Label className="form-label">Duration</Form.Label>
               <Row>
                 <Col xs={8}>
                   <Form.Control
@@ -173,18 +173,18 @@ fetchEdit();
                     onChange={(e) => setFormData({ ...formData, readTime: { ...formData.readTime, unit: e.target.value } })}
                     required
                   >
-                    <option value="minuti">Minuti</option>
-                    <option value="ore">Ore</option>
+                    <option value="minuti">Minutes</option>
+                    <option value="ore">Hours</option>
                   </Form.Control>
                 </Col>
               </Row>
             </Form.Group>
             <div className="d-flex gap-3">
               <Button className="submit-button" type="submit">
-                Salva modifiche
+                Save
               </Button>
               <Button className="submit-button" onClick={handleClose} style={{ background: 'transparent', border: '2px solid #2eff60' }}>
-                Chiudi
+                Close
               </Button>
             </div>
           </Form>

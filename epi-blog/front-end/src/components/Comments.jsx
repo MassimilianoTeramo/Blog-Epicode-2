@@ -147,7 +147,7 @@ const Comments = ({ postId }) => {
                 onClick={() => handleDelete(comment._id)}
                 className="mt-2"
               >
-                Elimina
+                Delete
               </Button>
             )}
           </ListGroup.Item>
