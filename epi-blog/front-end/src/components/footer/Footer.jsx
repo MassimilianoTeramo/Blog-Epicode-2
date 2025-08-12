@@ -11,7 +11,7 @@ const Footer = () => {
       <Container>
         <Row className="py-4">
           <Col md={4} className="footer-section">
-            <h5 className="footer-title">EpicBlog</h5>
+            <h5 className="footer-title">CineBlog</h5>
             <p className="footer-text">
            
             </p>

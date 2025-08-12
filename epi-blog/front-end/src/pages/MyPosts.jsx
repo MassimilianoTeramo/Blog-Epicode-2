@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import PostCards from '../components/PostCards';
 import axios from 'axios';
 import { useAuth } from '../contexts/AuthContext';
-import {Container, Row, Col, Button, Alert} from 'react-bootstrap'
+import {Container, Row, Col, Button, Alert} from 'react-bootstrap';
+import { Spiral } from 'ldrs/react';
+import 'ldrs/react/Spiral.css';
 
 const MyPosts= () =>{
     
@@ -42,7 +44,7 @@ const MyPosts= () =>{
         }
     };
 
-    if (loading) return <Container className='mt-4'><p>Loading...</p></Container>;
+    if (loading) return  <Spiral size={50} color="#0edf27ff" className="loading-spinner" />;
     if (error) return <Container className='mt-4'><Alert variant='danger'>{error}</Alert></Container>;
 
     return (
